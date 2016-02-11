@@ -1,0 +1,22 @@
+group 'br.edu.fa7'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile(
+            'javax.servlet:javax.servlet-api:3.1.0'
+    )
+
+    testCompile(
+            'junit:junit:4.12'
+    )
+}
