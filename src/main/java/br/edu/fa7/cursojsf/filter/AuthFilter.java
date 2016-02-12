@@ -22,7 +22,6 @@ public class AuthFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getRequestURI();
-        this.context.log("Recurso::" + uri);
 
         HttpSession session = req.getSession(false);
 
