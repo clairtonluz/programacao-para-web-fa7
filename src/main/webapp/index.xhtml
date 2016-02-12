@@ -1,11 +1,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head>
-<body>
-
-<h:outputText value="CONFIGURANDO JSF"/>
-</body>
+<ui:decorate template="/tema/template.xhtml">
+    <ui:define name="centro">
+        Aqui é o centro do index!
+        <h:outputText value="CONFIGURANDO JSF"/>
+        <p:commandButton value="Teste Primefaces"/>
+    </ui:define>
+</ui:decorate>
 </html>
