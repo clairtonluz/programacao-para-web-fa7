@@ -17,7 +17,9 @@ dependencies {
     )
 
     compile(
-            'org.primefaces:primefaces:5.3'
+            'org.primefaces:primefaces:5.3',
+            'org.hibernate:hibernate-entitymanager:5.1.0.Final',
+            'com.h2database:h2:1.4.191'
     )
 
     testCompile(
