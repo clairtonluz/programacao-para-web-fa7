@@ -8,16 +8,17 @@
     <p:messages id="messages" autoUpdate="true" closable="true"/>
 </div>
 <h:form>
-    <h:panelGrid cols="2">
-        <h:outputText value="Usuário"/>
-        <p:inputText value="#{loginBean.username}"/>
+    <div align="center">
+        <h:panelGrid cols="2">
+            <h:outputText value="Usuário"/>
+            <p:inputText value="#{loginBean.username}"/>
 
-        <h:outputText value="Senha"/>
-        <p:password value="#{loginBean.password}"/>
+            <h:outputText value="Senha"/>
+            <p:password value="#{loginBean.password}"/>
 
-        <p:commandButton value="Entrar" actionListener="#{loginBean.login}"/>
-
-    </h:panelGrid>
+            <p:commandButton value="Entrar" actionListener="#{loginBean.login}"/>
+        </h:panelGrid>
+    </div>
 
 </h:form>
 </body>
