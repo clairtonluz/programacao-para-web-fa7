@@ -27,7 +27,7 @@ public class AuthFilter implements Filter {
 
         if (!uri.endsWith("login.xhtml") && (session == null || (session.getAttribute("userLogged") == null))) {
             this.context.log("acesso nao autorizado");
-            res.sendRedirect("login.xhtml");
+            res.sendRedirect(req.getContextPath() + "/login.xhtml");
         } else {
             // pass the request along the filter chain
             chain.doFilter(request, response);

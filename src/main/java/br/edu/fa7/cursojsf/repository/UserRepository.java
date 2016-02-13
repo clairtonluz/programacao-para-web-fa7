@@ -4,9 +4,9 @@ import br.edu.fa7.cursojsf.model.User;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.io.Serializable;
+import java.util.List;
 
-public class UserRepository implements Serializable {
+public class UserRepository {
 
     @Inject
     private EntityManager entityManager;
@@ -18,5 +18,9 @@ public class UserRepository implements Serializable {
             entityManager.merge(user);
         }
         return user;
+    }
+
+    public List<User> findAll() {
+        return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 }

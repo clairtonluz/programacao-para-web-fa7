@@ -1,4 +1,4 @@
-package br.edu.fa7.cursojsf;
+package br.edu.fa7.cursojsf.bean;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.ExternalContext;
