@@ -17,4 +17,20 @@ public class UserService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public User save(User user) {
+        return userRepository.save(user);
+    }
+
+    public void remove(Long id) {
+        userRepository.remove(userRepository.findById(id));
+    }
+
+    public User findById(Long id) {
+        return userRepository.findById(id);
+    }
+    
+    public User findByUsernameAndPassword(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password);
+    }
 }
