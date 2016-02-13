@@ -30,7 +30,7 @@ public class LoginBean {
         User user = userService.findByUsernameAndPassword(username, password);
 
         if (user == null) {
-            alerta.error("Usuário e/ou senha inválido(s)");
+            alerta.error("Usuário e/ou senha inválido(s). (Padrão = usuário: 'admin', senha: 'admin')");
         } else {
             ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
             HttpSession session = (HttpSession) context.getSession(true);
