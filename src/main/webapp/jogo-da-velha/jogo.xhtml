@@ -58,6 +58,7 @@
             <h3>
               <h:outputText value="É a vez do jogador '#{bean.jogadorDaVez.nome}'" rendered="#{bean.jogoIniciado}" />
               <h:outputText value="Fim de jogo, vencedor é '#{bean.jogadorDaVez.nome}'" rendered="#{bean.jogoFinalizado}" />
+              <h:outputText value="Fim de jogo, empate, inicie um novo jogo." rendered="#{bean.jogoEmpatado}" />
             </h3>
             <div>
               <div class="cell-block top-left" >

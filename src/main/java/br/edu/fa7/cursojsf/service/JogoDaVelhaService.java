@@ -84,9 +84,19 @@ public class JogoDaVelhaService implements Serializable {
        && marca.equals(campo.get(combinacao[2])) ){
         ultimoVencedor = getVencedor(marca);
         status = StatusJogo.FINALIZADO;
-        break;
+        return;
       }
     }
+    verificaEmpate();
+  }
+
+  private void verificaEmpate(){
+    int qntPreenchida = 0;
+    for(String s : campo){
+      qntPreenchida += "".equals(s) ? 0 : 1;
+    }
+    if(qntPreenchida == 9)
+      status = StatusJogo.EMPATE;
   }
 
   private Jogador getVencedor(String marca){
@@ -110,13 +120,15 @@ public class JogoDaVelhaService implements Serializable {
   public boolean isJogoNaoIniciado(){
     return StatusJogo.NAO_INICIADO.equals(status);
   }
-
+  public boolean isJogoEmpatado() { return StatusJogo.EMPATE.equals(status); }
   public Jogador getUltimoVencedor() { return ultimoVencedor; }
   public Jogador getJogadorDaVez() { return jogadorDaVez;  }
   public Jogador getJogador1() {
     return jogador1;
   }
   public Jogador getJogador2() { return jogador2; }
+
+
 
   public class Jogador{
     private String nome;
@@ -143,6 +155,7 @@ public class JogoDaVelhaService implements Serializable {
   public enum StatusJogo{
     NAO_INICIADO,
     INICIADO,
+    EMPATE,
     FINALIZADO;
   }
 

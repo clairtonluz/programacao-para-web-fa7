@@ -23,7 +23,7 @@ public class JogoDaVelhaBean implements Serializable {
   }
 
   public boolean desabilitaCampo(String valorCampo){
-    return !"".equals(valorCampo) || service.isJogoFinalizado() || service.isJogoNaoIniciado();
+    return !"".equals(valorCampo) || service.isJogoFinalizado() || service.isJogoNaoIniciado() || service.isJogoEmpatado();
   }
 
   public void marca(int position){
@@ -38,6 +38,9 @@ public class JogoDaVelhaBean implements Serializable {
   }
   public boolean isJogoFinalizado(){
     return service.isJogoFinalizado();
+  }
+  public boolean isJogoEmpatado(){
+    return service.isJogoEmpatado();
   }
   public JogoDaVelhaService.Jogador getJogadorDaVez(){
     return service.getJogadorDaVez();
