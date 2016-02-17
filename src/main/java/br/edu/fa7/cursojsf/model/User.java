@@ -1,5 +1,7 @@
 package br.edu.fa7.cursojsf.model;
 
+import br.edu.fa7.cursojsf.model.converter.CepConverter;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,9 @@ public class User {
     private Long id;
     private String username;
     private String password;
+
+    @Convert(converter = CepConverter.class )
+    private Cep cep;
 
     public Long getId() {
         return id;
@@ -33,5 +38,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Cep getCep() {
+        return cep;
+    }
+
+    public void setCep(Cep cep) {
+        this.cep = cep;
     }
 }
